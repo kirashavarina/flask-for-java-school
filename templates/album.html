@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>{% block title %} {{ album['title'] }} {% endblock %}</h2>
+    <p>{{ album['author'] }}</p>
+    <p>{{ album['year_album'] }}</p>
+{% endblock %}

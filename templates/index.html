@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Welcome to my Flask project in Java {% endblock %}</h1>
+    {% for album in albums %}
+        <a href="{{ url_for('album', album_id=album['id']) }}">
+            <h2>{{ album['title'] }}</h2>
+        </a>
+        <span class="badge badge-primary">{{ album['author'] }}</span>
+		<span class="badge badge-primary">{{ album['year_album'] }}</span>
+		<a href="{{ url_for('edit', id=album['id']) }}">
+            <span class="badge badge-warning">Edit</span>
+        </a>
+        <hr>
+    {% endfor %}
+{% endblock %}
